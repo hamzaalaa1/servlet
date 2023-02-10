@@ -1,0 +1,52 @@
+ 
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+    version="5.0"
+    metadata-complete="false">
+    <servlet>
+        <servlet-name>JerseyServletContainer</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>jersey.config.server.provider.package</param-name>
+            <param-value>com.hamza.demo</param-value>
+        </init-param>
+    </servlet>
+    
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>com.hamza.loginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Home</servlet-name>
+        <servlet-class>com.hamza.Home</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Timer</servlet-name>
+        <servlet-class>com.hamza.TimerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogOut</servlet-name>
+        <servlet-class>com.hamza.LogOut</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Home</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/Main</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogOut</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Timer</servlet-name>
+        <url-pattern>/timer</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JerseyServletContainer</servlet-name>
+        <url-pattern>/student/*</url-pattern>
+    </servlet-mapping>
+</web-app>
